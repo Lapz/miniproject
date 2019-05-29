@@ -1,0 +1,98 @@
+@import "main.css";
+
+.wrapper {
+    width:80%;
+    margin: 0 auto;
+    background: #fff;
+    border-top: 3px solid #7f4cc1;
+    padding:10px;
+    border-radius: 2px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
+    color:#333
+}
+
+a,a:link,a:visited,a:active,a:hover {
+    text-decoration: none;
+}
+
+body {
+    margin: 10%;
+    margin-top: 5%;
+    font-family: Calibri;
+    background:#eee
+}
+
+.blog-title {
+    font-weight: 300 ;
+    font-family: Roboto;
+    font-size: 36px;
+}
+
+.button-wrapper {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+
+.noti {
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 28px;
+}
+
+
+
+
+.blog-card {
+    margin: 0 0 5% 0;
+    background: #4fc3f7;
+    border-top: 5px solid #1a237e;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    font-family: Roboto;
+}
+
+.blog-card:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+    transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.comment-card {
+    margin: 0 0 5% 0;
+    background: #9575cd;
+    border-top: 5px solid #1a237e;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    font-family: Roboto;
+}
+
+.blog-card:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+    transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+.post-title {
+
+    font-weight: 300;
+    text-align: left;
+    color:#fafafa;
+}
+
+.post-meta,.comment-meta  {
+    font-weight: 500;
+    font-size: 75%;
+    text-align: right;
+}
+
+
+.post-meta-info,.comment-meta-info {
+    display: inline-block;
+}
+.align-right {
+    text-align: right;
+}

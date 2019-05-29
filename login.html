@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.php">Lenard Pratt's Portfolio
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+
+        <div class="navbar-start">
+            <a class="navbar-item" href="index.php">Home</a>
+            <a class="navbar-item" href="blog.php">Blog</a>
+        </div>
+
+    </div>
+</nav>
+<div class="wrapper">
+    <form method="post" action="login.php" >
+        <fieldset id="main">
+            <legend id="title">Login</legend>
+            <fieldset id="email">
+                <label>Email</label><br>
+
+                <input type="email" name="email" required><br>
+
+                <label>Password</label><br>
+                <input type="password" name="password" required>
+            </fieldset>
+
+            <div class="container buttons">
+
+                <button id="submit" class="button">
+                    Login
+                </button>
+
+                <button id="reset" class="button"  >
+                    Clear Form
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+
+</body>
+</html>

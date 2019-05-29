@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="css/grid.css.css" rel="stylesheet">
+    <script src="post.js" defer></script>
+    <title>Add Post</title>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.php">Lenard Pratt's Portfolio
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+
+        <div class="navbar-start">
+            <a class="navbar-item" href="index.php">Home</a>
+            <a class="navbar-item" href="blog.php">Blog</a>
+        </div>
+
+    </div>
+</nav>
+
+
+    <div id="page-body" class="container">
+        <div  class="row wrapper">
+            <form id="form" method="post" action="addPost.php">
+
+                <fieldset>
+                    <legend>Add A Post</legend>
+                    <fieldset id="main">
+                        <label for="title">Title</label>
+                        <br>
+                        <input id="title" name="title" type="text" placeholder="Title">
+                        <br>
+                        <label for="body">Body</label>
+                        <br>
+                        <textarea id="body" name="body" placeholder="Enter Your Text Here"></textarea>
+                    </fieldset>
+                    <div class="buttons">
+                        <button id="post" class="button" onclick="return validateForm();">
+                            Post
+                        </button>
+
+                        <button id="reset"  class="button" >
+                            Clear
+                        </button>
+
+                        <button id="preview" class="button">
+                            Preview
+                        </button>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

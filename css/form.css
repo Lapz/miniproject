@@ -1,0 +1,79 @@
+/*
+    Forms
+ */
+
+@import "main.css";
+
+
+form label {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+legend {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+fieldset {
+    margin: 3%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
+}
+
+input {
+    background-color: #ffff;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.26);
+    color: #000000;
+    font-size: 13px;
+    font-weight: 300;
+    height: 2em;
+    line-height: 23px;
+
+}
+
+
+.highlight {
+    box-shadow: 0 0 5px #ef9a9a;
+}
+
+#title {
+    width: 75%;
+    transition: width 0.4s ease-in-out;
+}
+
+#title:focus{
+    width: 100%;
+}
+
+
+textarea {
+    height: 175%;
+    width: 100%;
+    background-color: #ffff;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.26);
+    color: #000000;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 23px;
+    resize: vertical;
+}
+
+input:hover,input:focus,input:active {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+    transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/*input[type=email]:invalid {*/
+/*box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(178, 40, 20, 0.79);*/
+/*transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);*/
+/*}*/
+
+input[type=email]:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+    transition: box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
