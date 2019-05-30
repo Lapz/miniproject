@@ -5,7 +5,7 @@
 // }
 
 
-let divs = document.getElementsByClassName("blog-card");
+let divs = document.getElementsByClassName("card");
 
 
 function clear(node) {
@@ -23,6 +23,56 @@ function label(_for,text) {
 
 }
 
+
+function createDomElement(ty,propertys,children) {
+    let elem = document.createElement(ty);
+
+    if(propertys.id !== null && propertys.id!== undefined ) {
+        elem.id = propertys.id;
+    }
+   
+
+    if(propertys.name !== null && propertys.name !== undefined ) {
+        elem.name = propertys.name;
+    }
+
+    if(propertys.className !== null && propertys.className !== undefined ) {
+        elem.className = propertys.className;
+    }
+
+    if(propertys.attributes !== null && propertys.attributes !== undefined && !propertys.attributes ) {
+
+        for(let i  =0;i < propertys.attributes.length;i+=1) {
+            let keys =Object.keys(propertys.attributes[i]);
+
+            if (keys.length > 1) {
+                console.log("a key value pair of more than one was passed");
+            }
+
+            elem.setAttribute(keys[0],propertys.attributes[i][keys[0]]);
+        }
+    }
+    
+    
+
+    if (children  !== null && children !== undefined) {
+        if (children.length > 0) {
+
+            for(let i =0; i < children.length;i+=1) {
+                if((typeof children[i] )!=="object") {
+                    let child = document.createElement("p");
+                    child.append(children[i])
+                    elem.appendChild(child);
+                }else {
+                    elem.appendChild(children[i]);
+                }
+            }
+           
+        }
+    }
+
+    return elem;
+}
 
 function input(id,name,text,ty) {
     let input = document.createElement("input");
@@ -119,7 +169,7 @@ function commentForm() {
 for(let i=0;i<divs.length;i+=1) { // loop through all the blog posts
     let child = divs.item(i); // select a post
 
-    if (child.tagName === "DIV" && child.className ==="blog-card") { // check if its the right kinda div
+    if (child.tagName === "DIV" && child.className ==="card") { // check if its the right kinda div
 
         child.addEventListener("click", function (event) {
             fetch(`comments.php?id=${child.id}`)
@@ -128,13 +178,21 @@ for(let i=0;i<divs.length;i+=1) { // loop through all the blog posts
                     let comments = document.getElementById("comments");
 
                     if(comments === null || comments=== undefined|| !comments) {
-                        let comments = document.createElement("div");
-                        comments.id ="comments";
-                        comments.className="row wrapper";
+                        let column = document.createElement("div");
 
-                        comments.setAttribute("data-postid",child.id);
+                        column.className="column";
 
-                        document.getElementById("body").append(comments);
+                        // comments.setAttribute("data-postid",child.id);
+
+                        column.appendChild(createDomElement("div",{
+                            className:"box",
+                            id:"comments",
+                            attributes: [{
+                                "data-postid":child.id
+                            }]
+                        }))
+
+                        document.getElementById("cols").appendChild(column);
 
                     }
 
@@ -152,35 +210,53 @@ for(let i=0;i<divs.length;i+=1) { // loop through all the blog posts
 
 
                         for (let i=0;i<comment_data.length;i++) {
-                            let box = document.createElement("div");
-                            box.className = "comment-card";
+                            let box = createDomElement("div",{
+                                className:"card",
+                                id:comment_data[i]["4"],
+                            },[
+                                createDomElement("div",{
+                                    className:"card-content"
+                                },[
+                                    createDomElement("div",{
+                                        className:"media-content"
+                                    },[
+                                        createDomElement("p",{
+                                            className:"title is-5"
+                                        },[
+                                            `${comment_data[i]["3"]} commented`
+                                        ]),
+                                        createDomElement("p",{
+                                            className:"subtitle is-6"
+                                        },[
+                                            createDomElement("i",{
+                                                className:"far fa-clock"
+                                            },[
+    
+                                            ]),
+    
+                                            `${comment_data[i]["1"]}`,  
+                                        ]),
+    
+                                    ]),
 
-                            let info = document.createElement("div");
-
-                            info.className="comment-meta";
-
-
-                            let text = `Posted on 
-                            ${comment_data[i]["1"]} by ${comment_data[i]["3"]}`;
-
-                            let p = document.createElement("p");
-
-                            let icon = document.createElement("i");
-                            icon.className="far fa-clock";
-                            p.className="comment-meta-info";
-
-                            p.append(icon);
-                            p.append(" ");
-                            p.append(text);
-                            info.append(p);
-
-                            box.append(info);
-
+                                    createDomElement("div",{
+                                        className:"content"
+                                    },[
+                                        `${comment_data[i]["0"]}`
+                                    ])
+                                ]), 
+                            ]);
                             console.log(comment_data[i]);
-                            box.append(comment_data[i]["0"]);
-                            box.id=comment_data[i]["4"];
+                            
 
-                            comments.append(box);
+                            comments.appendChild(box);
+                            //space the cards out
+                            comments.appendChild(...[ createDomElement("br",{
+
+                            }),
+                            createDomElement("br",{
+                            
+                            })]);
 
                         }
 
@@ -198,7 +274,7 @@ for(let i=0;i<divs.length;i+=1) { // loop through all the blog posts
                                     for(let i=0;i < children.length;i++) {
                                         let child = children.item(i);
 
-                                        if(child.tagName==="DIV" && child.className==="comment-card") {
+                                        if(child.tagName==="DIV" && child.className==="card") {
                                             let link = document.createElement("a");
 
                                             link.setAttribute("href",`deleteComment.php?id=${child.id}`);

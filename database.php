@@ -1,5 +1,5 @@
 <?php
-    $servername = "dbprojects.eecs.qmul.ac.uk";
+    $servername = "localhost:3307";
     $username = "lp311";
     $password = "P6kvC8YRdwgwN"; //available at webprojects
     $dbname = "lp311";

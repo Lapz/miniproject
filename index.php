@@ -4,62 +4,14 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href = "css/Skeleton/normalize.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href=  "css/Bulma/bulma.css">
-    <script src="main.js" defer></script>
+    <?php include "head.php" ?>
     <title>Portofolio</title>
 </head>
 <body>
 
-    <header>
-
-        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <b>Lenard Pratt's Portfolio</b>
-                </a>
-
-                <a id="nav-close" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="nav-menu" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item">
-                        Home
-                    </a>
-
-                    <a class="navbar-item" href="blog.php">
-                        Blog
-                    </a>
-                </div>
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <?php
-                                if (isset($_SESSION['user'])) {
-                                    echo "<a class=\"button is-light\" href=\"logout.php\">Logout</a>";
-                                }else {
-                                    echo "<a class=\"button is-light\" href=\"login.html\">Log in</a>";
-                                }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <br>
-    <br>
+   
+    <?php include "nav.php" ?>
+    
 
 
     <div class="container">
